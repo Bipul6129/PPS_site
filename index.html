@@ -40,7 +40,9 @@
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
-
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -48,28 +50,116 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+		.modal {
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 999; /* Sit on top */
+		padding-top: 60px; /* Location of the box */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+		}
+		
+		.modal-content {
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 700px;
+		}
+		
+		#caption {
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 700px;
+		text-align: center;
+		color: #ccc;
+		padding: 10px 0;
+		}
+		
+		.close {
+		position: absolute;
+		top: 15px;
+		right: 35px;
+		color: #f1f1f1;
+		font-size: 40px;
+		font-weight: bold;
+		transition: 0.3s;
+		}
+		
+		.close:hover,
+		.close:focus {
+		color: #bbb;
+		text-decoration: none;
+		cursor: pointer;
+		}
+
+		@media (min-width: 770px) {
+		#fullImage {
+			left: 10%;
+		}
+		}
+		/* Overlay container styling */
+		.company-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: rgba(0, 0, 0, 0.644); /* Black background with opacity */
+			z-index: 2; /* Ensure it stays on top of the background */
+		}
+
+		/* Image styling with glow effect */
+		.company-overlay img {
+			max-width: 1400px; /* Adjust size as needed */
+			filter: brightness(1.5); /* Slight brightness adjustment */
+		}
+
+		.colortext-logo {
+		font-family: "Poppins", sans-serif;
+		font-weight: 800;
+		font-style: normal;
+		}
+
+	</style>
+
 	</head>
 	<body>
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="logo-container" style="display: flex;justify-content: center;margin: 20px 0;">
-				<img src="images/logo.png" alt="Project Logo" style="max-width: 100px;height: auto;">
+			<div class="logo-container" style="display: flex; justify-content: center; margin: 20px 0; flex-direction: column; align-items: center;">
+				<img src="images/logo.png" alt="Project Logo" style="max-width: 100px; height: auto; margin-bottom: 24px;">
+				<h1 id="colortext-logo" style="color: white; font-weight: 525; font-family: 'Poppins', sans-serif; text-align: center; margin: 0;">
+					PROJECT PARTNER SOLUTION
+				</h1>
 			</div>
-			<h1 id="colorlib-logo"><a href="index.html">Project Partner Solution</a></h1>
+			
+			
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
-					<li class="colorlib-active"><a href="index.html">Home</a></li>
-					<li><a href="work.html">Project</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li class="colorlib-active"><a href="#colorlib-hero">Home</a></li>
+					<li><a  href="#project-section">Project</a></li>
+					<li><a href="#about-section">About</a></li>
+					<li><a href="#contact-section">Contact</a></li>
 				</ul>
 			</nav>
 
 			<div class="colorlib-footer" style="display: none;">
 				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> Distributed by: <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Demo Images: <a href="http://nothingtochance.co/" target="_blank">nothingtochance.co</a></span></small></p>
+				Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> Distributed by: <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Demo Images: <a href="http://nothingtochance.co/" target="_blank">nothingtochance.co</a></span></small></p>
 				<ul>
 					<li><a href="#"><i class="icon-facebook2"></i></a></li>
 					<li><a href="#"><i class="icon-twitter2"></i></a></li>
@@ -84,51 +174,45 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made 
 			<aside id="colorlib-hero" class="js-fullheight">
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
-				   	<li style="background-image: url(images/Cineroyale/1.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-						   					<h1>Cine royale</h1>
-												<p><a class="btn btn-primary btn-learn" href="work.html">View Project <i class="icon-arrow-right3"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url(images/DeesBoutiqueHotel/1.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-						   					<h1>Dees Boutique Hotel</h1>
-												<p><a class="btn btn-primary btn-learn" href="work.html">View Project <i class="icon-arrow-right3"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url(images/Joshiniwas/3.PNG);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-						   					<h1>Joshi niwas</h1>
-												<p><a class="btn btn-primary btn-learn" href="work.html">View Project <i class="icon-arrow-right3"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
+						<li style="background-image: url(images/Cineroyale/1.jpg);">
+							<div class="overlay"></div>
+							<div class="container-fluid">
+								<div class="company-overlay">
+									<img src="images/overlayImg.png" style="filter: invert(100%);" alt="Company Name">
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+										<!-- Any additional content here -->
+									</div>
+								</div>
+							</div>
+						</li>
+						<li style="background-image: url(images/DeesBoutiqueHotel/1.jpg);">
+							<div class="overlay"></div>
+							<div class="container-fluid">
+								<div class="company-overlay">
+									<img src="images/overlayImg.png" style="filter: invert(100%);" alt="Company Name">
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+										<!-- Any additional content here -->
+									</div>
+								</div>
+							</div>
+						</li>
+						<li style="background-image: url(images/DeesBoutiqueHotel/2.jpg);">
+							<div class="overlay"></div>
+							<div class="container-fluid">
+								<div class="company-overlay">
+									<img src="images/overlayImg.png" style="filter: invert(100%);" alt="Company Name">
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+										<!-- Any additional content here -->
+									</div>
+								</div>
+							</div>
+						</li>
 				  	</ul>
 			  	</div>
 			</aside>
@@ -137,10 +221,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made 
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6">
-							<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url(images/DeesBoutiqueHotel/3.jpg);">
+							<div class="about-img" style="background-image: url(images/DeesBoutiqueHotel/3.jpg);">
 							</div>
 						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+						<div class="col-md-6 " >
 							<div class="about-desc">
 								<span class="heading-meta">Welcome</span>
 								<h2 class="colorlib-heading">We are PREMIUM INTERIOR FIT OUT COMPANY</h2>
@@ -149,37 +233,37 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made 
 							</div>
 							<div class="row padding">
 								<h2 class="colorlib-heading">Industries we serve</h2>
-								<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
-									<a href="#" class="steps active">
+								<div class="col-md-4 no-gutters">
+									<a href="#" class="steps">
 										<p class="icon"><span><i class="icon-check"></i></span></p>
 										<h3>Residence</h3>
 									</a>
 								</div>
-								<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
+								<div class="col-md-4 no-gutters">
 									<a href="#" class="steps">
 										<p class="icon"><span><i class="icon-check"></i></span></p>
 										<h3>Hospitality</h3>
 									</a>
 								</div>
-								<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
+								<div class="col-md-4 no-gutters">
 									<a href="#" class="steps">
 										<p class="icon"><span><i class="icon-check"></i></span></p>
 										<h3>Commercial</h3>
 									</a>
 								</div>
-								<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
+								<div class="col-md-4 no-gutters">
 									<a href="#" class="steps">
 										<p class="icon"><span><i class="icon-check"></i></span></p>
 										<h3>F&B</h3>
 									</a>
 								</div>
-								<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
+								<div class="col-md-4 no-gutters">
 									<a href="#" class="steps">
 										<p class="icon"><span><i class="icon-check"></i></span></p>
 										<h3>Office</h3>
 									</a>
 								</div>
-								<div class="col-md-4 no-gutters animate-box" data-animate-effect="fadeInLeft">
+								<div class="col-md-4 no-gutters">
 									<a href="#" class="steps">
 										<p class="icon"><span><i class="icon-check"></i></span></p>
 										<h3>Retail</h3>
@@ -190,7 +274,251 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made 
 					</div>
 				</div>
 			</div>
+			<div id="project-section">
+				<div class="colorlib-work">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
+								<span class="heading-meta">Our work</span>
+								<h2 class="colorlib-heading">Cine royale</h2>
+							</div>
+						</div>
+						<div class="row row-bottom-padded-md">
+							<div class="col-md-6">
+								<div class="project" style="background-image: url(images/Cineroyale/1.jpg);">
+									</div>
+							</div>
+							
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/Cineroyale/2.jpg);">
+								</div>
+							</div>
+					</div>
+				</div>
+				<div class="colorlib-work">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
+								<h2 class="colorlib-heading">Dees Boutique Hotel</h2>
+							</div>
+						</div>
+						<div class="row row-bottom-padded-md">
+							<div class="col-md-6">
+								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/1.jpg);">
+									</div>
+							</div>
+							
+							<div class="col-md-3" >
+								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/2.jpg);">
+								</div>
+							</div>
+	
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/3.jpg);">
+								</div>
+							</div>
+	
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/4.jpg);">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="colorlib-work">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
+								<h2 class="colorlib-heading">Kaku Kaku Shika Jika Bar Fairfield by Marriott</h2>
+							</div>
+						</div>
+						<div class="row row-bottom-padded-md">
+							<div class="col-md-6">
+								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/1.jpg);">
+									</div>
+							</div>
+							
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/2.jpg);">
+								</div>
+							</div>
+	
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/3.jpg);">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
 
+			<div id="about-section">
+				<div class="colorlib-about">
+					<div class="colorlib-narrow-content">
+						<div class="row row-bottom-padded-md">
+							<div class="col-md-6">
+								<div class="about-img "style="background-image: url(images/DeesBoutiqueHotel/4.jpg);">
+								</div>
+							</div>
+							<div class="col-md-6 ">
+								<div class="about-desc">
+									<span class="heading-meta">Welcome</span>
+									<h2 class="colorlib-heading">Who we are</h2>
+									<p>We offer a turnkey service, the execution of the project from the initial design to the final construction &
+										handover of the space. As a Professional & Reliable Contracting Company we are proud to offer our services
+										all across Nepal. Our experienced workforce provides unparalleled service, and focuses on delivering
+										superior quality combined with long-lasting results. Our team have the capability to undertake a wide range
+										of projects, varying in size and specifications, and we offer competitive prices, alongside flexible payment
+										plans, to secure projects for a range of budgets. Whether your premise is an office, retail store, restaurant,
+										hotel, or residence, we are qualified to offer you expert advice ensure that your space embodies your
+										desires, ethos and brand identity. We provide all of our clients with a dedicated project team who work to
+										complete the interior fit out works within the specific time, standards, and budget. 
+									</p>
+								</div>
+								<h2 class="colorlib-heading">Industries we serve</h2>
+								<div class="row padding">
+									<div class="col-md-4 no-gutters " >
+										<a href="#" class="steps">
+											<p class="icon"><span><i class="icon-check"></i></span></p>
+											<h3>Residence </h3>
+										</a>
+									</div>
+									<div class="col-md-4 no-gutters ">
+										<a href="#" class="steps">
+											<p class="icon"><span><i class="icon-check"></i></span></p>
+											<h3>Hospitality </h3>
+										</a>
+									</div>
+									<div class="col-md-4 no-gutters" >
+										<a href="#" class="steps">
+											<p class="icon"><span><i class="icon-check"></i></span></p>
+											<h3>Commercial </h3>
+										</a>
+									</div>
+									<div class="col-md-4 no-gutters">
+										<a href="#" class="steps">
+											<p class="icon"><span><i class="icon-check"></i></span></p>
+											<h3>F&B </h3>
+										</a>
+									</div>
+									<div class="col-md-4 no-gutters" >
+										<a href="#" class="steps">
+											<p class="icon"><span><i class="icon-check"></i></span></p>
+											<h3>Office </h3>
+										</a>
+									</div>
+									<div class="col-md-4 no-gutters">
+										<a href="#" class="steps">
+											<p class="icon"><span><i class="icon-check"></i></span></p>
+											<h3>Retail </h3>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="contact-section">
+				<div class="colorlib-contact">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-12 ">
+								<span class="heading-meta">Read</span>
+								<h2 class="colorlib-heading">Get in Touch</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-5">
+								<div class="colorlib-feature colorlib-feature-sm ">
+									<div class="colorlib-icon">
+										<i class="icon-phone"></i>
+									</div>
+									<div class="colorlib-text">
+										<p><a href="mailto:projectpartnersolution@gmail.com" style="color: black;">projectpartnersolution@gmail.com</a></p>
+									</div>
+								</div>
+	
+								<div class="colorlib-feature colorlib-feature-sm ">
+									<div class="colorlib-icon">
+										<i class="icon-phone"></i>
+									</div>
+									<div class="colorlib-text">
+										<p><a href="tel:+9779845110786" style="color: black;">+977 9845110786</a>
+										<a href="tel:+9779813545913" style="color: black;">+977 9813545913</a></p>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="get-in-touch" class="colorlib-bg-color">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6">
+							<h2>Location</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3">
+							<p class="colorlib-lead">Raniban, Kathmandu, Nepal</p>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="imageModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="fullImage">
+			<div id="caption"></div>
+		</div>
+		</div>
+	
+		<script>
+			// Get the modal
+			var modal = document.getElementById("imageModal");
+		  
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+		  
+			// Get all elements with class "project" (multiple images)
+			var projectDivs = document.querySelectorAll('.project');
+			var modalImg = document.getElementById("fullImage");
+		  
+			// Loop through each project div and attach a click event
+			projectDivs.forEach(function(projectDiv) {
+			  projectDiv.addEventListener('click', function() {
+				modal.style.display = "block";
+				// Extract background-image URL
+				var imageUrl = this.style.backgroundImage.slice(5, -2); // Remove 'url(' and ')'
+				modalImg.src = imageUrl;
+			  });
+			});
+		  
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			document.addEventListener("DOMContentLoaded", function() {
+				const menuItems = document.querySelectorAll("#colorlib-main-menu ul li");
+
+				menuItems.forEach(item => {
+					item.addEventListener("click", function() {
+						// Remove the 'colorlib-active' class from all items
+						menuItems.forEach(el => el.classList.remove("colorlib-active"));
+
+						// Add the 'colorlib-active' class to the clicked item
+						item.classList.add("colorlib-active");
+					});
+				});
+			});
+
+		</script>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
