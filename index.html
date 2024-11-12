@@ -40,15 +40,17 @@
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<!-- Modernizr JS -->
+
+<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 	<style>
 		html {
@@ -127,10 +129,78 @@
 		}
 
 		.colortext-logo {
-		font-family: "Poppins", sans-serif;
-		font-weight: 800;
-		font-style: normal;
+			font-family: "Playfair Display", serif;
+			font-optical-sizing: auto;
+			font-weight: 600;
+			font-style: normal;
+			
+			color: white;
 		}
+
+				/* Basic styling for the services section */
+		#services-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+		background-color: #f8f8f8;
+		}
+
+		.colorlib-heading {
+		font-size: 2rem;
+		color: #333;
+		margin-bottom: 20px;
+		}
+
+		/* Styling for the services content container */
+		#services-contents {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		max-width: 1000px;
+		width: 100%;
+		}
+
+		/* Styling for each service block */
+		.sevice {
+		flex-direction: column;
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		flex: 1;
+		text-align: center;
+		transition: transform 0.3s ease;
+		width: 320px;
+		}
+
+		.sevice h2 {
+		font-size: 1.8rem;
+		color: #333;
+		margin-top: 32px;
+		font-weight: 600;
+		}
+
+
+		/* Responsive styling for smaller screens */
+		@media (max-width: 768px) {
+		#services-contents {
+			flex-direction: column;
+			gap: 15px;
+		}
+		
+		.colorlib-heading {
+			font-size: 1.8rem;
+		}
+
+		.sevice h2 {
+			font-size: 1.8rem;
+		}
+		}
+
+
 
 	</style>
 
@@ -141,7 +211,7 @@
 		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 			<div class="logo-container" style="display: flex; justify-content: center; margin: 20px 0; flex-direction: column; align-items: center;">
 				<img src="images/logo.png" alt="Project Logo" style="max-width: 100px; height: auto; margin-bottom: 24px;">
-				<h1 id="colortext-logo" style="color: white; font-weight: 525; font-family: 'Poppins', sans-serif; text-align: center; margin: 0;">
+				<h1 id="colortext-logo" style="color: white; font-weight: 800; font-family: 'Playfair Display', serif;text-align: center; margin: 0;">
 					PROJECT PARTNER SOLUTION
 				</h1>
 			</div>
@@ -150,8 +220,9 @@
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li class="colorlib-active"><a href="#colorlib-hero">Home</a></li>
-					<li><a  href="#project-section">Project</a></li>
 					<li><a href="#about-section">About</a></li>
+					<li><a href="#services-section">Services</a></li>
+					<li><a  href="#project-section">Project</a></li>
 					<li><a href="#contact-section">Contact</a></li>
 				</ul>
 			</nav>
@@ -274,84 +345,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="project-section">
-				<div class="colorlib-work">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
-								<span class="heading-meta">Our work</span>
-								<h2 class="colorlib-heading">Cine royale</h2>
-							</div>
-						</div>
-						<div class="row row-bottom-padded-md">
-							<div class="col-md-6">
-								<div class="project" style="background-image: url(images/Cineroyale/1.jpg);">
-									</div>
-							</div>
-							
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/Cineroyale/2.jpg);">
-								</div>
-							</div>
-					</div>
-				</div>
-				<div class="colorlib-work">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
-								<h2 class="colorlib-heading">Dees Boutique Hotel</h2>
-							</div>
-						</div>
-						<div class="row row-bottom-padded-md">
-							<div class="col-md-6">
-								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/1.jpg);">
-									</div>
-							</div>
-							
-							<div class="col-md-3" >
-								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/2.jpg);">
-								</div>
-							</div>
-	
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/3.jpg);">
-								</div>
-							</div>
-	
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/4.jpg);">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="colorlib-work">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
-								<h2 class="colorlib-heading">Kaku Kaku Shika Jika Bar Fairfield by Marriott</h2>
-							</div>
-						</div>
-						<div class="row row-bottom-padded-md">
-							<div class="col-md-6">
-								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/1.jpg);">
-									</div>
-							</div>
-							
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/2.jpg);">
-								</div>
-							</div>
-	
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/3.jpg);">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
+			
 
 			<div id="about-section">
 				<div class="colorlib-about">
@@ -420,8 +414,128 @@
 					</div>
 				</div>
 			</div>
+
+			<div id="services-section">
+				<h2 class="colorlib-heading">Sevices</h2>
+				<div id="services-contents">
+					<div class="sevice">
+						<img src="images/archiDesign.png"/>
+						<h2>Architectural & Interior Design</h2>
+					</div>
+					<div class="sevice">
+						<img src="images/civilPic.png"/>
+						<h2>Civil & Fit out Construction</h2>
+					</div>
+					<div class="sevice">
+						<img src="images/consManage.png"/>
+						<h2>Construction Management	</h2>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="project-section">
+				<div class="colorlib-work" style="padding-bottom: 0em;">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
+								<span class="heading-meta">Our work</span>
+								<h2 class="colorlib-heading">Cine royale</h2>
+							</div>
+						</div>
+						<div class="row row-bottom-padded-md">
+							<div class="col-md-6">
+								<div class="project" style="background-image: url(images/Cineroyale/1.jpg);">
+									</div>
+							</div>
+							
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/Cineroyale/2.jpg);">
+								</div>
+							</div>
+					</div>
+				</div>
+				<div class="colorlib-work" style="padding-bottom: 0em;">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
+								<h2 class="colorlib-heading">Dees Boutique Hotel</h2>
+							</div>
+						</div>
+						<div class="row row-bottom-padded-md">
+							<div class="col-md-6">
+								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/1.jpg);">
+									</div>
+							</div>
+							
+							<div class="col-md-3" >
+								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/2.jpg);">
+								</div>
+							</div>
+	
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/3.jpg);">
+								</div>
+							</div>
+	
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/4.jpg);">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="colorlib-work" style="padding-bottom: 0em;">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
+								<h2 class="colorlib-heading">Kaku Kaku Shika Jika Bar Fairfield by Marriott</h2>
+							</div>
+						</div>
+						<div class="row row-bottom-padded-md">
+							<div class="col-md-6">
+								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/1.jpg);">
+									</div>
+							</div>
+							
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/2.jpg);">
+								</div>
+							</div>
+	
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/3.jpg);">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="colorlib-work" style="padding-bottom: 0em;"> 
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
+								<h2 class="colorlib-heading">Residence</h2>
+							</div>
+						</div>
+						<div class="row row-bottom-padded-md">
+							<div class="col-md-6">
+								<div class="project" style="background-image: url(images/Residence/1.jpg);">
+									</div>
+							</div>
+							
+							<div class="col-md-3">
+								<div class="project" style="background-image: url(images/Residence/2.jpg);">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+
+
 			<div id="contact-section">
-				<div class="colorlib-contact">
+				<div class="colorlib-contact" >
 					<div class="colorlib-narrow-content">
 						<div class="row">
 							<div class="col-md-12 ">
