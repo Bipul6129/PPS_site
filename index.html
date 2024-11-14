@@ -108,6 +108,8 @@
 			left: 10%;
 		}
 		}
+
+		
 		/* Overlay container styling */
 		.company-overlay {
 			position: absolute;
@@ -177,7 +179,9 @@
 		}
 
 		.sevice h2 {
-		font-size: 1.8rem;
+		font-family: "Quicksand", Arial, sans-serif;
+		font-weight: 300;
+		font-size: 1.9rem;
 		color: #333;
 		margin-top: 32px;
 		font-weight: 600;
@@ -186,19 +190,134 @@
 
 		/* Responsive styling for smaller screens */
 		@media (max-width: 768px) {
-		#services-contents {
-			flex-direction: column;
-			gap: 15px;
-		}
-		
-		.colorlib-heading {
-			font-size: 1.8rem;
+			#services-contents {
+				flex-direction: column;
+				gap: 15px;
+			}
+			
+			.colorlib-heading {
+				font-size: 1.8rem;
+			}
+
+			.sevice h2 {
+				font-size: 1.8rem;
+
+			}
 		}
 
-		.sevice h2 {
-			font-size: 1.8rem;
+		#responsive-img {
+			height: 850px;
 		}
+
+		.project-info{
+			text-align: center;
 		}
+
+		.project-gallery-info {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		.project-gallery-info p {
+			font-size: 18px;
+			font-style: italic;
+		}
+
+		.slider {
+			position: relative;
+			display: flex;
+			align-items: center;
+		}
+
+		.slider-images {
+			width: 600px; /* Set the desired width */
+			height: 400px; /* Set a fixed height for a consistent frame size */
+			overflow: hidden;
+			position: relative;
+		}
+
+		.slider-images img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain; /* Display the full image without cropping */
+			display: none; /* Only the active image will display */
+			background-color: black; /* Optional: adds a background for images that don’t fill the container */
+		}
+
+
+
+		.arrow {
+			cursor: pointer;
+			font-size: 24px;
+			color: #333;
+			background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better visibility */
+			border: none;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 10; /* Ensures arrows are on top of the images */
+			padding: 10px; /* Optional: add padding for easier clicking */
+			color: white; /* Change arrow color to white for contrast */
+		}
+
+		.left-arrow {
+			left: 10px; /* Positions arrow within the slider container */
+		}
+
+		.right-arrow {
+			right: 10px; /* Positions arrow within the slider container */
+		}
+
+		.colorlib-contact{
+			background-color: rgba(0, 0, 0, 0.5); 
+			padding-bottom: 4em;
+		}
+		#contact-section{
+			background-image: url('images/contacts-bg.jpg');
+			background-size: 50%; /* Adjust size as needed */
+			background-position: right center; /* Aligns the image to the right side */
+			background-repeat: no-repeat;
+		}	
+
+
+		/* Optional: Make adjustments for smaller screens */
+		@media (max-width: 768px) {
+			.slider-images {
+				width: 100%; /* Responsive width */
+			}
+
+			.arrow {
+				font-size: 20px; /* Smaller font size for smaller screens */
+				padding: 8px;
+			}
+		}
+
+
+
+  /* Adjust height for screens smaller than 600px */
+		@media (max-width: 1200px) {
+			#responsive-img {
+				height: 600px; /* Adjust this value as needed */
+				width: 90%;
+			}
+			.project-gallery-info{
+				flex-direction: column-reverse;
+				justify-content: center;
+			
+			}
+			.project-info{
+				padding-top: 16px;
+			}
+			#contact-section{
+				background-image: none;
+			}
+		}
+
+	
+
+
 
 
 
@@ -222,7 +341,7 @@
 					<li class="colorlib-active"><a href="#colorlib-hero">Home</a></li>
 					<li><a href="#about-section">About</a></li>
 					<li><a href="#services-section">Services</a></li>
-					<li><a  href="#project-section">Project</a></li>
+					<li><a  href="#project-section">Projects</a></li>
 					<li><a href="#contact-section">Contact</a></li>
 				</ul>
 			</nav>
@@ -245,11 +364,11 @@
 			<aside id="colorlib-hero" class="js-fullheight">
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
-						<li style="background-image: url(images/Cineroyale/1.jpg);">
+						<li style="background-image: url(images/YakYetiHotel/1.jpg);">
 							<div class="overlay"></div>
 							<div class="container-fluid">
-								<div class="company-overlay">
-									<img src="images/overlayImg.png" style="filter: invert(100%);" alt="Company Name">
+								<div class="company-overlay" >
+									<h1 style="color: white; font-weight: 800; font-family: 'Playfair Display', serif;text-align: center; margin: 0;font-size:48px;">TURNKEY CONSTRUCTION COMPANY</h1>
 								</div>
 								<div class="row">
 									<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
@@ -262,7 +381,7 @@
 							<div class="overlay"></div>
 							<div class="container-fluid">
 								<div class="company-overlay">
-									<img src="images/overlayImg.png" style="filter: invert(100%);" alt="Company Name">
+									<h1 style="color: white; font-weight: 800; font-family: 'Playfair Display', serif;text-align: center; margin: 0;font-size:48px;">TURNKEY CONSTRUCTION COMPANY</h1>
 								</div>
 								<div class="row">
 									<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
@@ -271,11 +390,37 @@
 								</div>
 							</div>
 						</li>
-						<li style="background-image: url(images/DeesBoutiqueHotel/2.jpg);">
+						<li style="background-image: url(images/Cineroyale/1.jpg);">
 							<div class="overlay"></div>
 							<div class="container-fluid">
 								<div class="company-overlay">
-									<img src="images/overlayImg.png" style="filter: invert(100%);" alt="Company Name">
+									<h1 style="color: white; font-weight: 800; font-family: 'Playfair Display', serif;text-align: center; margin: 0;font-size:48px;">TURNKEY CONSTRUCTION COMPANY</h1>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+										<!-- Any additional content here -->
+									</div>
+								</div>
+							</div>
+						</li>
+						<li style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/1.jpg);">
+							<div class="overlay"></div>
+							<div class="container-fluid">
+								<div class="company-overlay">
+									<h1 style="color: white; font-weight: 800; font-family: 'Playfair Display', serif;text-align: center; margin: 0;font-size:48px;">TURNKEY CONSTRUCTION COMPANY</h1>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+										<!-- Any additional content here -->
+									</div>
+								</div>
+							</div>
+						</li>
+						<li style="background-image: url(images/Residence/1.jpg);">
+							<div class="overlay"></div>
+							<div class="container-fluid">
+								<div class="company-overlay">
+									<h1 style="color: white; font-weight: 800; font-family: 'Playfair Display', serif;text-align: center; margin: 0;font-size:48px;">TURNKEY CONSTRUCTION COMPANY</h1>
 								</div>
 								<div class="row">
 									<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
@@ -293,15 +438,12 @@
 				<div class="colorlib-about" id="about-section">
 					<div class="colorlib-narrow-content">
 						<div class="row row-bottom-padded-md">
-							<div class="col-md-6">
-								<div class="about-img "style="background-image: url(images/DeesBoutiqueHotel/4.jpg);">
-								</div>
-							</div>
+							
 							<div class="col-md-6 ">
 								<div class="about-desc">
 									<span class="heading-meta">Welcome</span>
 									<h2 class="colorlib-heading">Who we are</h2>
-									<p>We offer a turnkey service, the execution of the project from the initial design to the final construction &
+									<p style="text-align: center; line-height: 2.6;padding-inline: 10px;">We offer a turnkey service, the execution of the project from the initial design to the final construction &
 										handover of the space. As a Professional & Reliable Contracting Company we are proud to offer our services
 										all across Nepal. Our experienced workforce provides unparalleled service, and focuses on delivering
 										superior quality combined with long-lasting results. Our team have the capability to undertake a wide range
@@ -352,13 +494,18 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-md-6" style="display: flex;justify-content: center;">
+								<!-- <div class="about-img "style="background-image: url(images/aboutPage.jpg);height:800px">
+								</div> -->
+								<img id="responsive-img" src="images/aboutPage.jpg" style="width: 90%;" />
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div id="services-section">
-				<h2 class="colorlib-heading">Sevices</h2>
+				<h2 class="colorlib-heading">Services</h2>
 				<div id="services-contents">
 					<div class="sevice">
 						<img src="images/archiDesign.png"/>
@@ -382,97 +529,140 @@
 						<div class="row">
 							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
 								<span class="heading-meta">Our work</span>
+								<h2 class="colorlib-heading">Yak & Yeti Hotel</h2>
+							</div>
+						</div>
+						<div class="project-gallery-info">
+							<div class="project-info">
+								<p>Yak & Yeit Hotel<br>
+								Location: Durbar Marg, Kathmandu<br>
+								Year:2024
+								</p>
+							</div>
+							<div class="slider">
+								<button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
+								
+								<div class="slider-images">
+								  <img src="images/YakYetiHotel/1.jpg" alt="Image 1" class="slide" style="display: block;">
+					
+								</div>
+								
+								<button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="colorlib-work"  style="padding-bottom: 0em;">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
+								<h2 class="colorlib-heading">Dees Botique Hotel</h2>
+							</div>
+						</div>
+						<div class="project-gallery-info">
+							<div class="project-info">
+								<p>Cine Royale<br>
+								Location: Nepalgunj<br>
+								Year:2023
+								</p>
+							</div>
+							<div class="slider">
+								<button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
+								
+								<div class="slider-images">
+								  <img src="images/DeesBoutiqueHotel/1.jpg" alt="Image 1" class="slide" style="display: block;">
+								  <img src="images/DeesBoutiqueHotel/2.jpg" alt="Image 2" class="slide" style="display: none;">
+								  <img src="images/DeesBoutiqueHotel/3.jpg" alt="Image 2" class="slide" style="display: none;">
+								  <img src="images/DeesBoutiqueHotel/4.jpg" alt="Image 2" class="slide" style="display: none;">	
+								</div>
+								
+								<button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="colorlib-work"  style="padding-bottom: 0em;">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
 								<h2 class="colorlib-heading">Cine royale</h2>
 							</div>
 						</div>
-						<div class="row row-bottom-padded-md">
-							<div class="col-md-6">
-								<div class="project" style="background-image: url(images/Cineroyale/1.jpg);">
-									</div>
+						<div class="project-gallery-info">
+							<div class="project-info">
+								<p>Cine Royale<br>
+								Location: Nepalgunj<br>
+								Year:2023
+								</p>
 							</div>
-							
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/Cineroyale/2.jpg);">
+							<div class="slider">
+								<button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
+								
+								<div class="slider-images">
+								  <img src="images/Cineroyale/1.jpg" alt="Image 1" class="slide" style="display: block;">
+								  <img src="images/Cineroyale/2.jpg" alt="Image 2" class="slide" style="display: none;">
 								</div>
-							</div>
-					</div>
-				</div>
-				<div class="colorlib-work" style="padding-bottom: 0em;">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
-								<h2 class="colorlib-heading">Dees Boutique Hotel</h2>
-							</div>
-						</div>
-						<div class="row row-bottom-padded-md">
-							<div class="col-md-6">
-								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/1.jpg);">
-									</div>
-							</div>
-							
-							<div class="col-md-3" >
-								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/2.jpg);">
-								</div>
-							</div>
-	
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/3.jpg);">
-								</div>
-							</div>
-	
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/DeesBoutiqueHotel/4.jpg);">
-								</div>
+								
+								<button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="colorlib-work" style="padding-bottom: 0em;">
+				<div class="colorlib-work"  style="padding-bottom: 0em;">
 					<div class="colorlib-narrow-content">
 						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
 								<h2 class="colorlib-heading">Kaku Kaku Shika Jika Bar Fairfield by Marriott</h2>
 							</div>
 						</div>
-						<div class="row row-bottom-padded-md">
-							<div class="col-md-6">
-								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/1.jpg);">
-									</div>
+						<div class="project-gallery-info">
+							<div class="project-info">
+								<p>Kaku Kaku Shika Jika Bar Fairfield<br>
+								Location: Thamel, Kathmandu<br>
+								Year:2023
+								</p>
 							</div>
-							
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/2.jpg);">
+							<div class="slider">
+								<button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
+								
+								<div class="slider-images">
+								  <img src="images/KakuKakuShikaJikaBarFairfieldbyMarriott/1.jpg" alt="Image 1" class="slide" style="display: block;">
+								  <img src="images/KakuKakuShikaJikaBarFairfieldbyMarriott/2.jpg" alt="Image 2" class="slide" style="display: none;">
+								  <img src="images/KakuKakuShikaJikaBarFairfieldbyMarriott/3.jpg" alt="Image 2" class="slide" style="display: none;">
 								</div>
-							</div>
-	
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/KakuKakuShikaJikaBarFairfieldbyMarriott/3.jpg);">
-								</div>
+								
+								<button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="colorlib-work" style="padding-bottom: 0em;"> 
+				<div class="colorlib-work">
 					<div class="colorlib-narrow-content">
 						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
 								<h2 class="colorlib-heading">Residence</h2>
 							</div>
 						</div>
-						<div class="row row-bottom-padded-md">
-							<div class="col-md-6">
-								<div class="project" style="background-image: url(images/Residence/1.jpg);">
-									</div>
+						<div class="project-gallery-info">
+							<div class="project-info">
+								<p>Residence<br>
+								Location: Babarmahal, Kathmandu<br>
+								Year:2023
+								</p>
 							</div>
-							
-							<div class="col-md-3">
-								<div class="project" style="background-image: url(images/Residence/2.jpg);">
+							<div class="slider">
+								<button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
+								
+								<div class="slider-images">
+								  <img src="images/Residence/1.jpg" alt="Image 1" class="slide" style="display: block;">
+								  <img src="images/Residence/2.jpg" alt="Image 2" class="slide" style="display: none;">
 								</div>
+								
+								<button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 
 
@@ -481,15 +671,15 @@
 					<div class="colorlib-narrow-content">
 						<div class="row">
 							<div class="col-md-12 ">
-								<span class="heading-meta">Read</span>
+								<span class="heading-meta" style="color: rgb(43, 43, 43);">Read</span>
 								<h2 class="colorlib-heading">Get in Touch</h2>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-5">
-								<div class="colorlib-feature colorlib-feature-sm ">
+								<div class="colorlib-feature colorlib-feature-sm">
 									<div class="colorlib-icon">
-										<i class="icon-phone"></i>
+										<i class="icon-mail"></i>
 									</div>
 									<div class="colorlib-text">
 										<p><a href="mailto:projectpartnersolution@gmail.com" style="color: black;">projectpartnersolution@gmail.com</a></p>
@@ -501,7 +691,7 @@
 										<i class="icon-phone"></i>
 									</div>
 									<div class="colorlib-text">
-										<p><a href="tel:+9779845110786" style="color: black;">+977 9845110786</a>
+										<p><a href="tel:+9779845110786" style="color: black;">+977 9845110786<br></a>
 										<a href="tel:+9779813545913" style="color: black;">+977 9813545913</a></p>
 										
 									</div>
@@ -573,6 +763,36 @@
 					});
 				});
 			});
+
+			document.querySelectorAll('.slider').forEach((slider) => {
+			let currentSlide = 0;
+			const slides = slider.querySelectorAll('.slide');
+			
+			function showSlide(index) {
+				slides.forEach((slide, i) => {
+					slide.style.display = i === index ? 'block' : 'none';
+				});
+			}
+
+			function nextImage() {
+				currentSlide = (currentSlide + 1) % slides.length;
+				showSlide(currentSlide);
+			}
+
+			function prevImage() {
+				currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+				showSlide(currentSlide);
+			}
+
+			// Initial display of the first slide
+			showSlide(currentSlide);
+
+			// Attach event listeners to the buttons within the slider
+			slider.querySelector('.right-arrow').addEventListener('click', nextImage);
+			slider.querySelector('.left-arrow').addEventListener('click', prevImage);
+		});
+
+
 
 		</script>
 	<!-- jQuery -->
