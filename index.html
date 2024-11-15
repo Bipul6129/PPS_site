@@ -281,6 +281,13 @@
 			background-repeat: no-repeat;
 		}	
 
+		#heading-first-project{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+
 
 		/* Optional: Make adjustments for smaller screens */
 		@media (max-width: 768px) {
@@ -524,34 +531,39 @@
 			</div>
 
 			<div id="project-section">
-				<div class="colorlib-work" style="padding-bottom: 0em;">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3">
-								<span class="heading-meta">Our work</span>
-								<h2 class="colorlib-heading">Yak & Yeti Hotel</h2>
-							</div>
-						</div>
-						<div class="project-gallery-info">
-							<div class="project-info">
-								<p>Yak & Yeit Hotel<br>
-								Location: Durbar Marg, Kathmandu<br>
-								Year:2024
-								</p>
-							</div>
-							<div class="slider">
-								<button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
-								
-								<div class="slider-images">
-								  <img src="images/YakYetiHotel/1.jpg" alt="Image 1" class="slide" style="display: block;">
-					
+				<div id="heading-first-project">
+					<h2 class="colorlib-heading" style="padding-top: 1.8em;">Projects</h2>
+					<div class="colorlib-work" style="padding-bottom: 0em;">
+						<div class="colorlib-narrow-content">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-3 col-md-pull-3">
+									<!-- <span class="heading-meta">Our work</span>
+									-->
+									<h2 class="colorlib-heading">Yak & Yeti Hotel</h2>
 								</div>
-								
-								<button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
+							</div>
+							<div class="project-gallery-info">
+								<div class="project-info">
+									<p>Yak & Yeit Hotel<br>
+									Location: Durbar Marg, Kathmandu<br>
+									Year:2024
+									</p>
+								</div>
+								<div class="slider">
+									<button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
+									
+									<div class="slider-images">
+									<img src="images/YakYetiHotel/1.jpg" alt="Image 1" class="slide" style="display: block;">
+						
+									</div>
+									
+									<button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				
 				<div class="colorlib-work"  style="padding-bottom: 0em;">
 					<div class="colorlib-narrow-content">
 						<div class="row">
@@ -561,9 +573,9 @@
 						</div>
 						<div class="project-gallery-info">
 							<div class="project-info">
-								<p>Cine Royale<br>
-								Location: Nepalgunj<br>
-								Year:2023
+								<p>Dees Botique Hotel<br>
+								Location: Koteshor, Kathmandu<br>
+								Year:2024
 								</p>
 							</div>
 							<div class="slider">
